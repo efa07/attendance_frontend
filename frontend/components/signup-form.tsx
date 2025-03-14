@@ -1,5 +1,4 @@
 "use client";
-
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -53,9 +52,9 @@ export function SignUpForm({ className, ...props }: React.ComponentProps<"form">
       });
       alert(response.data.message);
       router.push("/login")
-    } catch (error: any) {
+    } catch (error) {
       console.error("Signup error:", error);
-      alert(error.response?.data?.error || "An error occurred during signup");
+      alert("An error occurred during signup");
     }
   };
 

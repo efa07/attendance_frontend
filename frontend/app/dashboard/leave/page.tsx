@@ -74,7 +74,7 @@ export default function LeaveManagement() {
 
       }
     } catch (error) {
-      setMessage('Error applying for leave');
+      console.error('Error applying for leave', error);
     } finally {
       setLoading(false);
     }

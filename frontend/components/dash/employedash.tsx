@@ -66,14 +66,18 @@ export default function EmployeeDashboard() {
           },
         }
       );
-
+  
       if (!res.ok) {
         const errorData = await res.json();
         throw new Error(errorData.message || 'Failed to clock in');
       }
       toast.success("Clock in")
-    } catch (error: any) {
-      alert(error.message);
+    } catch (error) {
+      if (error instanceof Error) {
+        alert(error.message);
+      } else {
+        alert('An unknown error occurred');
+      }
     } finally {
       setLoading(false);
       await fetchAttendanceStatus();
@@ -99,8 +103,12 @@ export default function EmployeeDashboard() {
         const errorData = await res.json();
         throw new Error(errorData.message || 'Failed to clock out');
       }
-    } catch (error: any) {
-      alert(error.message);
+    } catch (error) {
+      if (error instanceof Error) {
+        alert(error.message);
+      } else {
+        alert('An unknown error occurred');
+      }
     } finally {
       setLoading(false);
       await fetchAttendanceStatus();

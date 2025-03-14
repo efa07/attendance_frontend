@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, JSXElementConstructor, ReactElement, ReactNode, ReactPortal } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -12,9 +12,8 @@ const API_URL = "http://localhost:3001/api/shift";
 const shiftOptions = ["Morning", "Evening", "Night"]; 
 
 const ShiftManagement = () => {
-  const [shifts, setShifts] = useState<{ id: number; user: any; shiftType: string; shiftStart: string; shiftEnd: string }[]>([]);
+  const [shifts, setShifts] = useState<{ id: number; user: { fullName: string | number | bigint | boolean | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<string | number | bigint | boolean | ReactPortal | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | null | undefined> | null | undefined; }; shiftType: string; shiftStart: string; shiftEnd: string }[]>([]);
   const [newShift, setNewShift] = useState({ shiftType: "", shiftStart: "", shiftEnd: "" });
-  const [assignments, setAssignments] = useState<{ employee: string; shift: string }[]>([]);
   const [employee, setEmployee] = useState("");
   const [selectedShift, setSelectedShift] = useState("");
   const [shift, setShift] = useState({ shiftType: "", shiftStart: "", shiftEnd: "", id: 0 });
