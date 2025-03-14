@@ -70,7 +70,7 @@ export function LoginForm({
     } catch (error) {
       console.error("Login error:", error);
       alert(
-        (error as any)?.response?.data?.error || "An error occurred during login"
+        "An error occurred during login"
       );
     }
   };

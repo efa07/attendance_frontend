@@ -12,8 +12,14 @@ const API_URL = "http://localhost:3001/api/shift";
 const shiftOptions = ["Morning", "Evening", "Night"]; 
 
 const ShiftManagement = () => {
-  const [shifts, setShifts] = useState<{ id: number; user: { fullName: string | number | bigint | boolean | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<string | number | bigint | boolean | ReactPortal | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | null | undefined> | null | undefined; }; shiftType: string; shiftStart: string; shiftEnd: string }[]>([]);
-  const [newShift, setNewShift] = useState({ shiftType: "", shiftStart: "", shiftEnd: "" });
+  const [shifts, setShifts] = useState<{ 
+    id: number; 
+    user: { fullName: string }; 
+    shiftType: string; 
+    shiftStart: string; 
+    shiftEnd: string 
+  }[]>([]);
+    const [newShift, setNewShift] = useState({ shiftType: "", shiftStart: "", shiftEnd: "" });
   const [employee, setEmployee] = useState("");
   const [selectedShift, setSelectedShift] = useState("");
   const [shift, setShift] = useState({ shiftType: "", shiftStart: "", shiftEnd: "", id: 0 });
