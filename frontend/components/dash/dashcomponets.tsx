@@ -11,6 +11,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+const API_URL = process.env.API_URL
 
 export default function SidebarDemo() {
   const [username, setUsername] = useState<string | null>("");
@@ -83,7 +84,7 @@ export default function SidebarDemo() {
                 href: "profile",
                 icon: profilePic ? (
                   <img
-                    src={`http://localhost:3001/uploads/${profilePic}`}
+                    src={`${API_URL}/uploads/${profilePic}`}
                     className="h-7 w-7 flex-shrink-0 rounded-full"
                     width={30}
                     height={30}

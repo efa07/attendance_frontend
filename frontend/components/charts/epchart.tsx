@@ -18,6 +18,7 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart";
+const API_URL = process.env.API_URL
 
 const AttendanceTrend = () => {
   const [chartData, setChartData] = useState([]);
@@ -43,7 +44,7 @@ const AttendanceTrend = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `http://localhost:3001/api/attendance/history`,
+          `${API_URL}/api/attendance/history`,
           {
             headers: {
               "Content-Type": "application/json",

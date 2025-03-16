@@ -8,14 +8,14 @@ import { useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { jwtDecode } from "jwt-decode";
+const API_URL = process.env.API_URL
 
-// Define expected structure of the decoded JWT token
 interface DecodedToken {
   username: string;
   role: string;
   department: string;
   userId: string;
-  profilePic?: string; // Optional in case it's not always present
+  profilePic?: string; // Optional 
 }
 
 // Define expected structure of API response
@@ -47,7 +47,7 @@ export function LoginForm({
 
     try {
       const response = await axios.post<LoginResponse>(
-        "http://localhost:3001/api/login",
+        `${API_URL}/api/login`,
         { email, password }
       );
 
@@ -62,8 +62,8 @@ export function LoginForm({
       localStorage.setItem("username", username);
       localStorage.setItem("role", role);
       localStorage.setItem("department", department);
-      localStorage.setItem("userId", String(userId)); // Ensure string conversion
-      localStorage.setItem("profilePic", profilePic || ""); // Handle optional case
+      localStorage.setItem("userId", String(userId));  // Convert to string
+      localStorage.setItem("profilePic", profilePic || ""); 
 
       // Redirect to dashboard
       router.push("/dashboard");

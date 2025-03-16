@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import axios from "axios";
 import { toast } from 'react-toastify';
+const API_URL = process.env.API_URL
 
 interface User {
   fullName: string;
@@ -46,7 +47,7 @@ export default function ProfileSettings() {
     if (file) formData.append("profilePic", file);
 
     try {
-      await axios.put("http://localhost:3001/api/update", formData, {
+      await axios.put(`${API_URL}/api/update`, formData, {
         headers: { 
           "Content-Type": "multipart/form-data",
           Authorization: `Bearer ${token}`,

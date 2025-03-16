@@ -6,6 +6,7 @@ import { Bell, Calendar, Clock, FileText, ChartColumn } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import {  toast } from 'react-toastify';
+const API_URL = process.env.API_URL
 
 export default function EmployeeDashboard() {
   const [status, setStatus] = useState('');
@@ -18,7 +19,7 @@ export default function EmployeeDashboard() {
       if (!token) return router.push('/login');
 
       const res = await fetch(
-        `http://localhost:3001/api/attendance/history`,
+        `${API_URL}/api/attendance/history`,
         {
           headers: {
             'Content-Type': 'application/json',
@@ -57,7 +58,7 @@ export default function EmployeeDashboard() {
     try {
       const token = localStorage.getItem('token');
       const res = await fetch(
-        `http://localhost:3001/api/attendance/clock-in`,
+        `${API_URL}/api/attendance/clock-in`,
         {
           method: 'POST',
           headers: {
@@ -89,7 +90,7 @@ export default function EmployeeDashboard() {
     try {
       const token = localStorage.getItem('token');
       const res = await fetch(
-        `http://localhost:3001/api/attendance/clock-out`,
+        `${API_URL}/api/attendance/clock-out`,
         {
           method: 'POST',
           headers: {

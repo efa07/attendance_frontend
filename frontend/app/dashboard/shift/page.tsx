@@ -6,8 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Select, SelectTrigger, SelectContent, SelectItem, SelectValue } from "@/components/ui/select";
 import { Table, TableHeader, TableRow, TableCell } from "@/components/ui/table";
 import MoonLoader from "react-spinners/ClipLoader";
-
-const API_URL = "http://localhost:3001/api/shift";
+const API_URL = process.env.API_URL
 
 const shiftOptions = ["Morning", "Evening", "Night"]; 
 

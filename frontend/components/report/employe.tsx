@@ -1,5 +1,6 @@
 "use client"
 import { useState, useEffect } from 'react';
+const API_URL = process.env.API_URL
 
 interface AttendanceRecord {
   date: string;
@@ -22,7 +23,7 @@ export default function AttendanceReports() {
       const params = new URLSearchParams();
       if (startDate) params.append('startDate', startDate);
       if (endDate) params.append('endDate', endDate);
-      const res = await fetch(`http://localhost:3001/api/attendance/reports?${params.toString()}`, {
+      const res = await fetch(`${API_URL}/api/attendance/reports?${params.toString()}`, {
         headers: {
           Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json'

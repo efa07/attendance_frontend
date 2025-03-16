@@ -13,6 +13,7 @@ import { Label } from "@/components/ui/label";
 import { useState,useEffect } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
+const API_URL = process.env.API_URL
 
 export function SignUpForm({ className, ...props }: React.ComponentProps<"form">) {
   const [email, setEmail] = useState<string>("");
@@ -43,7 +44,7 @@ export function SignUpForm({ className, ...props }: React.ComponentProps<"form">
     }
 
     try {
-      const response = await axios.post("http://localhost:3001/api/signup", {
+      const response = await axios.post(`${API_URL}/api/signup`, {
         fullName,
         email,
         password,
