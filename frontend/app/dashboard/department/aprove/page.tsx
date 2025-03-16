@@ -13,7 +13,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "react-toastify";
-const API_URL = process.env.API_URL
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 interface AttendanceRecord {
   id: number;

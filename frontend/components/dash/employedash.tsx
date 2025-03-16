@@ -6,8 +6,7 @@ import { Bell, Calendar, Clock, FileText, ChartColumn } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import {  toast } from 'react-toastify';
-const API_URL = process.env.API_URL
-
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
 export default function EmployeeDashboard() {
   const [status, setStatus] = useState('');
   const [loading, setLoading] = useState(false);

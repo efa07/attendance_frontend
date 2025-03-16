@@ -10,7 +10,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Card, CardContent } from "@/components/ui/card";
-const API_URL = process.env.API_URL
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 interface LeaveRequest {
   id: number;

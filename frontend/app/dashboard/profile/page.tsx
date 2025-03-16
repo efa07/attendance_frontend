@@ -5,8 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import axios from "axios";
 import { toast } from 'react-toastify';
-const API_URL = process.env.API_URL
-
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
 interface User {
   fullName: string;
   email: string;

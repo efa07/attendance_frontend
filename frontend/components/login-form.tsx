@@ -8,8 +8,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { jwtDecode } from "jwt-decode";
-const API_URL = process.env.API_URL
-
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
 interface DecodedToken {
   username: string;
   role: string;

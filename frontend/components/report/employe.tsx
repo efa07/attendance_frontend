@@ -1,7 +1,6 @@
 "use client"
 import { useState, useEffect } from 'react';
-const API_URL = process.env.API_URL
-
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
 interface AttendanceRecord {
   date: string;
   checkIn: string;

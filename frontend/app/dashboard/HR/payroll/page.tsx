@@ -6,8 +6,7 @@ import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Badge } from '../../../../components/ui/badge';
 import { DollarSign, Clock, Calendar, User } from 'lucide-react';
 import { Button } from '../../../../components/ui/button';
-const API_URL = process.env.API_URL
-
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
 interface PayrollData {
   id: number;
   name: string;

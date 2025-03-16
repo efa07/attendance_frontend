@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from "recharts";
 import { Card } from "@/components/ui/card";
 import { Select, SelectTrigger, SelectContent, SelectItem, SelectValue } from "@/components/ui/select";
-const API_URL = process.env.API_URL
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 const AttendanceAnalytics = () => {
   const [attendanceData, setAttendanceData] = useState([]);

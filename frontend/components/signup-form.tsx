@@ -13,8 +13,7 @@ import { Label } from "@/components/ui/label";
 import { useState,useEffect } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
-const API_URL = process.env.API_URL
-
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
 export function SignUpForm({ className, ...props }: React.ComponentProps<"form">) {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");

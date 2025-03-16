@@ -11,8 +11,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-const API_URL = process.env.API_URL
-
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
 export default function SidebarDemo() {
   const [username, setUsername] = useState<string | null>("");
   const [profilePic, setProfilePic] = useState<string | null>(null);

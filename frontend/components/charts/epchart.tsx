@@ -18,8 +18,7 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart";
-const API_URL = process.env.API_URL
-
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
 const AttendanceTrend = () => {
   const [chartData, setChartData] = useState([]);
   const [token, setToken] = useState<string | null>(null);
